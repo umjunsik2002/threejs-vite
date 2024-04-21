@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "npx vite",
-    "predeploy": "npx vite build",
+    "predeploy": "npx vite build && xcopy /e /y textures dist\\textures\\ && xcopy /e /y models dist\\models\\",
     "deploy": "gh-pages -d dist"
   }
 }

@@ -80,9 +80,11 @@ function main() {
           scene.add(object);
           object.position.set(2, 0, 0);
           shapes.push(object);
+          document.getElementById('loading').innerText = 'Bugatti loaded!';
         },
         function (xhr) {
-          console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
+          const percentLoaded = (xhr.loaded / xhr.total) * 100;
+          document.getElementById('loading').innerText = `Loading Bugatti... ${percentLoaded.toFixed(0)}%`;
         },
         function (error) {
           console.error('Failed to load OBJ model:', error);
